@@ -1,0 +1,17 @@
+# Topsy Larder
+
+> Topsy Larder is a calm jar-sorting puzzle game for iPhone, set on the shelves of a farmhouse larder. Pour fruit preserves from jar to jar until every jar holds a single fruit. Some jars stand in brass cradles and can be turned upside down, so the bottom layer comes to the top. Coming soon to the App Store; there is no store link yet.
+
+- How to play: tap a jar to pick it up, then tap another jar to pour its top layer onto the same fruit or into an empty jar. A jar filled with one fruit is sealed with wax. Undo and Restart are always free.
+- The turn: tapping the ring of a jar's brass cradle turns the jar upside down, bringing its bottom layer to the top. Turning makes puzzles with a single empty jar solvable, so every pour and every turn counts.
+- Free: all 150 days of puzzles, each checked by a solver so every one can be finished, and a new Daily Jar every day. No timers, no lives.
+- Optional in-app purchases: baskets of tools (Picking Basket, Market Hamper, Harvest Wagon) that add Hints, Fresh Jars and Peeks, and the Endless Cellar, which unlocks endless jars and past Daily Jars. Extras are never required.
+- No ads, no account, no analytics or tracking. The game collects no data; progress stays on the iPhone and is not synced. It plays offline; only buying something needs a connection.
+- Accessibility: every fruit has its own texture as well as its colour (strawberry seeds, blueberries, apricot slices), so colour is never the only clue.
+- Platform: iPhone only. The game is in English.
+
+## Pages
+
+- [Home](https://nguyenvanlamm.github.io/topsy-larder-site/): what the game is, why the turning jars play differently, how to play, questions
+- [Support](https://nguyenvanlamm.github.io/topsy-larder-site/support.html): contact, how to play, purchases and restoring, progress
+- [Privacy Policy](https://nguyenvanlamm.github.io/topsy-larder-site/privacy.html): what the game stores on the device and what it never collects
