@@ -98,7 +98,7 @@
   .cta { display: inline-block; background-color: var(--paper); border: 2px solid var(--ink); border-radius: 12px; padding: 14px; text-decoration: none;
     background-image: linear-gradient(90deg, rgba(168,55,42,.62) 50%, transparent 50%), linear-gradient(rgba(168,55,42,.62) 50%, transparent 50%);
     background-size: 16px 16px; }
-  .cta span { display: block; background: var(--paper); border: 2px solid var(--ink); border-radius: 4px; padding: 10px 22px; font-weight: 800; font-size: 19px; }
+  .cta span { display: block; background: var(--paper); border: 2px solid var(--ink); border-radius: 4px; padding: 10px 22px; font-weight: 800; font-size: 19px; text-wrap: balance; }
   .note { font-family: Kalam, cursive; font-weight: 700; color: var(--ink); margin-top: 12px; font-size: 17px; }
   .phone { width: 100%; max-width: 330px; justify-self: center; border-radius: 36px; border: 2px solid var(--ink); box-shadow: 0 18px 36px -18px rgba(19,37,41,.6); display: block; }
   section { padding: 40px 0; }
@@ -112,16 +112,23 @@
   .shelf img { width: 100%; max-width: 240px; border-radius: 24px; border: 2px solid var(--ink); }
   .shelf figcaption { font-family: Kalam, cursive; font-weight: 700; margin-top: 8px; }
   ol.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: s; }
-  ol.steps li { background: var(--paper); border: 2px solid var(--ink); border-radius: 12px; padding: 18px 20px; counter-increment: s; }
-  ol.steps li::before { content: counter(s); display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--wax); color: var(--paper); font-weight: 800; margin-bottom: 8px; }
+  /* Number badge beside the text, so wrapped lines of a step stay aligned. */
+  ol.steps li { background: var(--paper); border: 2px solid var(--ink); border-radius: 12px; padding: 18px 20px; counter-increment: s; display: flex; align-items: flex-start; gap: 12px; }
+  ol.steps li::before { content: counter(s); flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--wax); color: var(--paper); font-weight: 800; margin-top: -3px; }
   details { background: var(--paper); border: 2px solid var(--ink); border-radius: 12px; padding: 14px 20px; margin-bottom: 12px; }
   summary { font-weight: 700; cursor: pointer; }
   details p { margin: 10px 0 0; color: var(--ink-2); }
   footer { padding: 32px 0 48px; color: var(--ink-2); font-size: 15px; }
-  footer a { margin-right: 18px; font-weight: 700; }
+  /* Vertical padding gives the footer links a touch target taller than 24 px. */
+  footer a { margin-right: 18px; font-weight: 700; display: inline-block; padding: 10px 0; }
   @media (max-width: 760px) {
     header.hero { grid-template-columns: 1fr; padding-top: 32px; }
     .cards, ol.steps, .shelf { grid-template-columns: 1fr; }
+  }
+  /* Phones: same gingham frame with slimmer padding, so the badge label fits one line. */
+  @media (max-width: 420px) {
+    .cta { padding: 10px; }
+    .cta span { padding: 10px 14px; font-size: 18px; }
   }
 </style>
 </head>
@@ -132,12 +139,13 @@
       <div class="sign"><img src="assets/icon.webp" alt="" width="44" height="44"><span>Topsy Larder</span></div>
       <h1>Turn the jar.<br>Sort the season.</h1>
       <p class="lede">A calm puzzle for the shelves of a farmhouse larder. Pour fruit preserves from jar to jar until every jar holds one fruit. Some jars turn upside down, and that changes everything.</p>
-      <span class="cta" aria-label="Coming soon to the App Store"><span>Coming soon to the App Store</span></span>
+      <span class="cta"><span>Coming soon to the App Store</span></span>
       <p class="note">For iPhone. Free to play, no ads.</p>
     </div>
     <img class="phone" src="assets/turn.webp" alt="A Topsy Larder level: jars of fruit preserves on wooden shelves, one jar turning upside down in its brass cradle" width="390" height="844">
   </header>
 
+  <main>
   <section aria-labelledby="why">
     <h2 id="why">Why it plays differently</h2>
     <div class="cards">
@@ -159,7 +167,7 @@
 
   <section aria-labelledby="how">
     <h2 id="how">How to play</h2>
-    <ol class="steps">
+    <ol class="steps" role="list">
       <li>Tap a jar to pick it up.</li>
       <li>Tap another jar to pour its top layer onto the same fruit or into an empty jar.</li>
       <li>Fill a jar with one fruit to seal it with wax. Stuck? Turn a jar in its cradle.</li>
@@ -173,6 +181,7 @@
     <details><summary>Can I play if I am colour-blind?</summary><p>Yes. Each fruit has its own pattern as well as its colour.</p></details>
     <details><summary>Does it work offline?</summary><p>Yes, completely. You only need a connection to buy something in the shop.</p></details>
   </section>
+  </main>
 
   <footer>
     <a href="privacy.html">Privacy</a><a href="support.html">Support</a>
